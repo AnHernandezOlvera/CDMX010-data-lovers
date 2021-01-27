@@ -4,9 +4,14 @@ const container = document.getElementById("pokemonlist");
 console.log(pokemons);
 export const allPokemons = pokemons.map(function(pokemon){
   let tarjetas = `
-  <div> 
+  <div class="card"> 
   <img src="${pokemon.img}">
-  <p>${pokemon.name}</p>
+  <p class="name">${pokemon.num} ${pokemon.name}</p>
+  <p class="type">Tipo: ${pokemon.type}</p>
+  <p class=physical>Peso: ${pokemon.size.weight} | Altura: ${pokemon.size.height}</p>
+  <div class="footer-card">
+  <span class="generation">${pokemon.generation.name}</span>
+  <div>
   </div>
 `;
 container.insertAdjacentHTML("beforeend", tarjetas)
