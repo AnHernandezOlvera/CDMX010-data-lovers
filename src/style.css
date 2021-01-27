@@ -43,12 +43,12 @@ h2{
     }
  .startcontainer{
      height: 100vh;
-     background-color: aqua;
+     background-color: "#f3fcff";
      transition: all .5s;
  }
  .image{
      height: 33.33%;
-     background: url("./images/Charmander.gif") no-repeat center;
+     background: url("./images/pokebolaturned.gif") no-repeat center;
      background-size: contain;
  }
  .starttext{
