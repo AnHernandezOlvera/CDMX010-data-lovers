@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import {URL, printData} from './data.js';
 //const container= document.getElementById("pokemonlist");
 document.getElementById("insect-button").addEventListener("mouseover", function(){
@@ -37,6 +38,22 @@ selector.addEventListener('change', function(event) {
     console.log(pokemonsFiltered);
     // pokemonsFiltered generar HTML como cards u otro y luego pasarlo a el contenedor
     //document.getElementById('container').innerHTML = 
+=======
+import {filterByType, pokemons} from './data.js';
+const buttonWater = document.getElementById('water-button');
+buttonWater.addEventListener("click",function(){
+    const contenedor = document.getElementById("pokemonlist");
+    const pokemonesAgua = filterByType(buttonWater.value);
+    const waterPokemon = pokemonesAgua.map(function (pokemon) {
+        return`
+        <div> 
+        <img src="${pokemon.img}">
+        <p>${pokemon.name}</p>
+        </div>
+`; 
+>>>>>>> 1eff773f43b7faf1d767f5c517c12fd4ac25425c
 });
-
-*/
+    contenedor.innerHTML=waterPokemon.join('');
+    console.log(pokemonesAgua);
+ 
+})
