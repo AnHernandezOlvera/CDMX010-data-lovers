@@ -80,9 +80,7 @@ h2{
     float: right;
     margin-right: 40px;
 }
-.screen-two{
-    padding: 0 10%;
-}
+
 .list-item{
     position: absolute;
     width: auto;
@@ -109,9 +107,14 @@ h2{
     width: 100%;
 }
 .pokemonlist{
-    width: 60%;
+    width: 80%;
     float: left;
-
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 2em;
+    padding: 0 10%;
+    margin-top: 3em;
 }
 .w30{
     width: 33.33%;
@@ -124,13 +127,12 @@ h2{
 }
 
 aside {
-     width: 15%;
+    width: 15%;
     min-height: 400px;
     float: left;
     text-align: center;
     border-right: solid 1px #519657;
     margin-right: 0%;
-
 }
 
 .screen{
@@ -245,4 +247,29 @@ aside {
     transform: rotate(0deg);
     float:right;
     margin-top: 30px;
+}
+/*Estilos cards*/
+.card{
+    border:1px solid #b5dda9;
+    padding: 1em;
+    background-color:  #b5dda9;
+    text-align: center;
+}
+.name{
+    background-color: #b5dda9;
+    color: black;
+    text-align: center;
+    padding: .5em;
+    font-family: 'Bangers', cursive;
+    font-size: 2em;
+}
+.footer-card{
+    border-top: 1px dotted #000;
+    padding: 20px 0;
+}
+.generation{
+    padding: .5em;
+    border-radius: 10px;
+    background-color: gold;
+    text-transform: uppercase;
 }
