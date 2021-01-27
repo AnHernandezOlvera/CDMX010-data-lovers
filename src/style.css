@@ -43,7 +43,7 @@ h2{
     }
  .startcontainer{
      height: 100vh;
-     background-color: "#f3fcff";
+     background-color: #f3fcff;
      transition: all .5s;
  }
  .image{
@@ -219,20 +219,20 @@ aside {
 
   }
   .insect-button{
-    background-color: rgba(100, 57, 28, 0.781);
+    background-color: rgba(212, 93, 56, 0.932);
     transform: rotate(10deg);
 }
 .plant-button{
-    background-color: green;
+    background-color: rgb(80, 211, 80);
     transform: rotate(-10deg);
 }
 .water-button{
-  background-color: blue;
+  background-color: rgb(100, 100, 207);
   transform: rotate(10deg);
   
 }
 .fire-button{
-  background-color: red;
+  background-color: rgb(245, 58, 58);
   transform: rotate(-10deg);
  
 }
@@ -241,7 +241,7 @@ aside {
   transform: rotate(10deg);
 }
 .all-button{
-    background-color: rgb(136, 128, 18);
+    background-color: rgb(238, 235, 44);
     transform: rotate(0deg);
     float:right;
     margin-top: 30px;
