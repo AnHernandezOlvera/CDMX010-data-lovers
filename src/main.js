@@ -9,22 +9,23 @@ document.getElementById("insect-button").addEventListener("mouseleave", function
 });
 const buttonWater = document.getElementById('water-button');
 buttonWater.addEventListener("click",function(){
-    const contenedor = document.getElementById("pokemonlist");
+    const container = document.getElementById("pokemonlist");
     const pokemonesAgua = filterByType(buttonWater.value);
     const waterPokemon = pokemonesAgua.map(function (pokemon) {
         return`
         <div class="card"> 
-  <img src="${pokemon.img}">
+    <img src="${pokemon.img}">
   <p class="name">${pokemon.num} ${pokemon.name}</p>
-  <p class="type">Tipo: ${pokemon.type}</p>
-  <p class=physical>Peso: ${pokemon.size.weight} | Altura: ${pokemon.size.height}</p>
+  <p class="type">Tipo: ${pokemon.type.join(', ')}</p>
+  <p class="physical">Peso: ${pokemon.size.weight} | Altura: ${pokemon.size.height}</p>
   <div class="footer-card">
   <span class="generation">${pokemon.generation.name}</span>
-  <div>
   </div>
-`; 
-});
-    contenedor.innerHTML=waterPokemon.join('');
+  </div>
+`;  
+}); container.innerHTML=waterPokemon.join('');
+
+
     console.log(pokemonesAgua);
  
 })
