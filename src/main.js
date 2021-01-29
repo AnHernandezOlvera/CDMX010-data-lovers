@@ -83,4 +83,26 @@ document.getElementById("psychic-button").addEventListener("mouseleave", functio
     document.getElementById("back").style.backgroundColor = "#f3fcff";
     document.getElementById("image").style.backgroundImage = "url('./images/pokebolaturned.gif')";
 });
+const selector = document.getElementById("selectorType")
+
+selector.addEventListener('change', function(event) {
+    const container = document.getElementById("pokemonlist");
+    const value = event.target.value // poison, grass
+    const pokemonsFiltered = filterByType(value)
+    const typeSelect = pokemonsFiltered.map(function (pokemon) {
+        return`
+        <div class="card"> 
+        <img src="${pokemon.img}">
+        <p class="name">${pokemon.num} ${pokemon.name}</p>
+        <p class="type">Tipo: ${pokemon.type.join(', ')}</p>
+        <p class="physical">Peso: ${pokemon.size.weight} | Altura: ${pokemon.size.height}</p>
+        <div class="footer-card">
+        <span class="generation">${pokemon.generation.name}</span>
+        </div>
+        </div>
+`;  
+}); container.innerHTML=typeSelect.join('');
+    // pokemonsFiltered generar HTML como cards u otro y luego pasarlo a el contenedor
+    //document.getElementById('container').innerHTML = 
+});
 
