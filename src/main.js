@@ -1,4 +1,14 @@
 import {filterByType, pokemons} from './data.js';
+//menu responsive
+const menu = document.getElementById('menuIcon');
+menu.addEventListener('click', function() {
+var x = document.getElementById("topnav");
+  if (x.className === "startmenu") {
+    x.className += " responsive";
+  } else {
+    x.className = "startmenu";
+  }
+})
 document.getElementById("insect-button").addEventListener("mouseover", function(){
     document.getElementById("back").style.backgroundColor = "black";
     document.getElementById("image").style.backgroundImage = "url('./images/Yanma.gif')";
