@@ -26,3 +26,17 @@ export const filterByType = (type) => { // type = 'poison'
 }
 
 console.log(filterByType('poison'));
+
+export const changeOrder = (x, y) => {
+  const myorderlist = pokemons.sort(function (a,b) {
+    if (a.name > b.name){
+      let primer = x;
+      return primer;
+    }
+    if (a.name < b.name){
+      let second = y;
+      return second;
+    }
+    return 0 
+  }); return myorderlist;
+}; console.log(changeOrder(1, -1));

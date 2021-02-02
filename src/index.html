@@ -69,7 +69,7 @@
 
       <nav class="menu">
         <select name="select" id="selectorType">
-          <option value="typeselector">Tipo:</option>
+          <option value="typeselector" selected disabled>Tipo:</option>
           <option value="grass">Grass</option>
           <option value="flying">Flying</option>
           <option value="fire">Fire</option>
@@ -79,8 +79,8 @@
           <option value="poison">poison</option>
           <option value="electric">electric</option>
           <option value="ground">Ground</option>
-          <option value="Psychic">Physic</option>
-          <option value="flighting">Flighting</option>
+          <option value="psychic">Physic</option>
+          <option value="fighting">Fighting</option>
           <option value="rock">Rock</option>
           <option value="ghost">Ghost</option>
           <option value="ice">Ice</option>
@@ -98,8 +98,14 @@
           <option value="normal">Normal</option>
         </select>
       </nav>
+      <div>
+        <select name="order" id="orderSelect">
+          <option value="first">Ordenar por:</option>
+          <option value="A-Z" id="ascending">A-Z</option>
+          <option value="Z-A" id="descending">Z-A</option>
+        </select>
+      </div>
 
-      
       <div class="pokemonlist" id="pokemonlist">
 
       </div>
