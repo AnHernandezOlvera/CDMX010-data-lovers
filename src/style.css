@@ -71,7 +71,7 @@ h2{
  }
 .menu {
      float: right;
-    background-color:#e0e0e0;
+    background-color: #b5dda9;
     width: 75%;
     text-align: right;
     padding: 30px;
@@ -361,7 +361,53 @@ and (max-width: 1080px){
     display: block;
     border-bottom: 1px dashed #fff;
   }
+  .screen-two{
+    font-size: calc(2em + 1vw);
+    padding: 1em, 2em;
+}
+.menu {
+    background-color: #94b989;
+    padding: 15px 30px;
+    font-size: calc (3em + 4vw); 
+    width: 100%;
+    float: right;
   }
+  .pokemonlist{
+    border: 1px solid #463274;
+    padding: 1em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    text-align: center; 
+    margin-left: 2em;
+    margin-right: 2em;
+  
+    }
+    .cards.responsive{   
+        border:1px solid #b5dda9;
+        padding: calc (1em);
+        background-color:  #b5dda9;
+        text-align: center;
+    }
+    .name{
+        background-color: #b5dda9;
+        color: black;
+        text-align: center;
+        padding: calc(.25);
+        font-family: 'Bangers', cursive;
+        font-size: 1em;
+    }
+    .footer-card{
+        border-top: 1px dotted #000;
+        padding: calc (10px 0);
+    }
+    .generation{
+        padding: .25em;
+        border-radius: 10px;
+        background-color: gold;
+        text-transform: uppercase;
+    }
+
+    }  
   @media all
   and (max-width: 1080px) and (orientation: landscape) {
   h2{
@@ -375,6 +421,5 @@ and (max-width: 1080px){
     margin-left: 2vw;
     margin-top: 10vh;
   }
-  
-}
 
+}
