@@ -41,48 +41,23 @@ buttonWater.addEventListener("click",function(){
 })
 
 //const container= document.getElementById("pokemonlist");
-document.getElementById("insect-button").addEventListener("mouseover", function(){
-    document.getElementById("back").style.backgroundColor = "#f3fcff";
-    document.getElementById("image").style.backgroundImage = "url('./images/Yanma.gif')";
-});
-document.getElementById("insect-button").addEventListener("mouseleave", function(){
+function mouseLeaveAnimation() {
     document.getElementById("back").style.backgroundColor = "#f3fcff";
     document.getElementById("image").style.backgroundImage = "url('./images/pokebolaturned.gif')";
-});
-document.getElementById("grass-button").addEventListener("mouseover", function(){
-    document.getElementById("back").style.backgroundColor = "#f3fcff";
-    document.getElementById("image").style.backgroundImage = "url('./images/Ivysaur.gif')";
-});
-document.getElementById("grass-button").addEventListener("mouseleave", function(){
-    document.getElementById("back").style.backgroundColor = "#f3fcff";
-    document.getElementById("image").style.backgroundImage = "url('./images/pokebolaturned.gif')";
-});
+}
 
-document.getElementById("water-button").addEventListener("mouseover", function(){
-    document.getElementById("back").style.backgroundColor = "#f3fcff";
-    document.getElementById("image").style.backgroundImage = "url('./images/Gyarados.gif')";
-});
-document.getElementById("water-button").addEventListener("mouseleave", function(){
-    document.getElementById("back").style.backgroundColor = "#f3fcff";
-    document.getElementById("image").style.backgroundImage = "url('./images/pokebolaturned.gif')";
-});
-document.getElementById("fire-button").addEventListener("mouseover", function(){
-    document.getElementById("back").style.backgroundColor = "#f3fcff";
-    document.getElementById("image").style.backgroundImage = "url('./images/Charmander.gif')";
-});
-document.getElementById("fire-button").addEventListener("mouseleave", function(){
-    document.getElementById("back").style.backgroundColor = "#f3fcff";
-    document.getElementById("image").style.backgroundImage = "url('./images/pokebolaturned.gif')";
-});
+//const container= document.getElementById("pokemonlist");
 
-document.getElementById("psychic-button").addEventListener("mouseover", function(){
-    document.getElementById("back").style.backgroundColor = "#f3fcff";
-    document.getElementById("image").style.backgroundImage = "url('./images/Mew.gif')";
-});
-document.getElementById("psychic-button").addEventListener("mouseleave", function(){
-    document.getElementById("back").style.backgroundColor = "#f3fcff";
-    document.getElementById("image").style.backgroundImage = "url('./images/pokebolaturned.gif')";
-});
+const botonesFiltrado = document.querySelectorAll('.buttonfilter')
+botonesFiltrado.forEach(function (boton) {
+    boton.addEventListener('mouseleave', mouseLeaveAnimation)
+    boton.addEventListener('mouseover', (event) => {
+        console.log(event.target)
+        const backgroundImage = event.target.dataset.background
+        document.getElementById("image").style.backgroundImage = `url('./images/${backgroundImage}.gif')`;
+    })
+})
+
 const selector = document.getElementById("selectorType")
 
 selector.addEventListener('change', function(event) {
