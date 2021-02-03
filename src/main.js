@@ -9,14 +9,6 @@ let x = document.getElementById("topnav");
     x.className = "startmenu";
   }
 })
-document.getElementById("insect-button").addEventListener("mouseover", function(){
-    document.getElementById("back").style.backgroundColor = "black";
-    document.getElementById("image").style.backgroundImage = "url('./images/Yanma.gif')";
-});
-document.getElementById("insect-button").addEventListener("mouseleave", function(){
-    document.getElementById("back").style.backgroundColor = "yellow";
-    document.getElementById("image").style.backgroundImage = "url('./images/Charmander.gif')";
-});
 const buttonWater = document.getElementById('water-button');
 buttonWater.addEventListener("click",function(){
     const container = document.getElementById("pokemonlist");
@@ -56,6 +48,7 @@ botonesFiltrado.forEach(function (boton) {
         const backgroundImage = event.target.dataset.background
         document.getElementById("image").style.backgroundImage = `url('./images/${backgroundImage}.gif')`;
     })
+    
 })
 
 const selector = document.getElementById("selectorType")
