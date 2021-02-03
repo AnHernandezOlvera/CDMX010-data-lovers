@@ -1,5 +1,7 @@
 import data from './data/pokemon/pokemon.js'
 export const pokemons = data.pokemon;
+
+//Función de imprimir toda la data//
 const container = document.getElementById("pokemonlist");
 console.log(pokemons);
 export const allPokemons = pokemons.map(function(pokemon){
@@ -16,7 +18,7 @@ export const allPokemons = pokemons.map(function(pokemon){
 `;console.log(tarjetas);
 container.insertAdjacentHTML("beforeend", tarjetas)
 }); 
-
+// Función de filtrado de data por tipo//
 export const filterByType = (type) => { // type = 'poison'
   const pokemonsByType = pokemons.filter(function(pokemon) {
     return pokemon.type.includes(type)
@@ -26,7 +28,7 @@ export const filterByType = (type) => { // type = 'poison'
 }
 
 console.log(filterByType('poison'));
-
+//Función de ordenado alfabeticamente //
 export const changeOrder = (x, y) => {
   const myorderlist = pokemons.sort(function (a,b) {
     if (a.name > b.name){

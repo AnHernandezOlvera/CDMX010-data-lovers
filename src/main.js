@@ -32,14 +32,12 @@ buttonWater.addEventListener("click",function(){
  
 })
 
-//const container= document.getElementById("pokemonlist");
+//Función para mantener la misma imagen después del mouseleave//
 function mouseLeaveAnimation() {
     document.getElementById("back").style.backgroundColor = "#f3fcff";
     document.getElementById("image").style.backgroundImage = "url('./images/pokebolaturned.gif')";
 }
-
-//const container= document.getElementById("pokemonlist");
-
+//Función de animación para Gifs//
 const botonesFiltrado = document.querySelectorAll('.buttonfilter')
 botonesFiltrado.forEach(function (boton) {
     boton.addEventListener('mouseleave', mouseLeaveAnimation)
@@ -50,12 +48,12 @@ botonesFiltrado.forEach(function (boton) {
     })
     
 })
-
+//Función para el filtro de tipo en el Selector//
 const selector = document.getElementById("selectorType")
 
 selector.addEventListener('change', function(event) {
     const container = document.getElementById("pokemonlist");
-    const value = event.target.value // poison, grass
+    const value = event.target.value
     const pokemonsFiltered = filterByType(value)
     const typeSelect = pokemonsFiltered.map(function (pokemon) {
         return`
@@ -74,7 +72,7 @@ selector.addEventListener('change', function(event) {
     //document.getElementById('container').innerHTML = 
 });
 
-// aplicación de ordemiento en evento
+// Función de Orden alfabético 
 const orderDefine = document.getElementById('orderSelect');
 orderDefine.addEventListener('change', function (event) {
     const container = document.getElementById("pokemonlist");
@@ -113,30 +111,4 @@ orderDefine.addEventListener('change', function (event) {
     }); container.innerHTML=listaDescendente.join('');
         
     }
-})/* 
-document.getElementById('orderSelect').addEventListener('change', function (event) {
-    let value = event.target.value;
-    if (value === "AZ") {
-        const container= document.getElementById('pokemonlist');
-        const ascendingList = orderlist.map(function (pokemon) {
-            return`
-            <div class="card"> 
-        <img src="${pokemon.img}">
-      <p class="name">${pokemon.num} ${pokemon.name}</p>
-      <p class="type">Tipo: ${pokemon.type.join(', ')}</p>
-      <p class="physical">Peso: ${pokemon.size.weight} | Altura: ${pokemon.size.height}</p>
-      <div class="footer-card">
-      <span class="generation">${pokemon.generation.name}</span>
-      </div>
-      </div>
-    `;  
-    }); container.innerHTML=ascendingList.join('');
-    
-  } else if (event.target.value==='ZA'){
-
-  }
-    else {
-    console.log('error');
-  }
-}) */
-
+})
