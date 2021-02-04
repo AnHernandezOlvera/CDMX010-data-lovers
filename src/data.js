@@ -17,7 +17,10 @@ export const allPokemons = pokemons.map(function(pokemon){
   </div>
 `;console.log(tarjetas);
 container.insertAdjacentHTML("beforeend", tarjetas)
-}); 
+});
+
+
+
 // Función de filtrado de data por tipo//
 export const filterByType = (type) => { // type = 'poison'
   const pokemonsByType = pokemons.filter(function(pokemon) {

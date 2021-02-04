@@ -1,4 +1,4 @@
-import {filterByType, changeOrder, numberedList} from './data.js';
+import {filterByType, changeOrder, numberedList, pokemons} from './data.js';
 //menu responsive
 const menu = document.getElementById('menuIcon');
 menu.addEventListener('click', function() {
@@ -151,3 +151,36 @@ numbered.addEventListener('change', function(event){
          }); container.innerHTML = numberedPokemons.join ('');
     }
 });
+
+const showAll= document.getElementById("all-button");
+showAll.addEventListener("click", function(){
+  const container = document.getElementById("pokemonlist");
+  const dataPokemon = pokemons;
+  window.scrollTo({
+    top: container.offsetTop,
+    left: 0,
+    behavior: 'smooth'
+  });
+    const showAllPokemons = dataPokemon.map(function (pokemon) {
+    return`
+    <div class="card"> 
+    <img src="${pokemon.img}">
+    <p class="name">${pokemon.num} ${pokemon.name}</p>
+    <p class="type">Tipo: ${pokemon.type.join(', ')}</p>
+    <p class="physical">Peso: ${pokemon.size.weight} | Altura: ${pokemon.size.height}</p>
+    <div class="footer-card">
+    <span class="generation">${pokemon.generation.name}</span>
+    </div>
+    </div>
+`;  
+}); container.innerHTML=showAllPokemons.join('');
+
+}
+);
+
+//Función de selector rareza
+// const rarity = document.getElementById("raritySelector") //Aquí tomamos el id del boton 
+
+// rarity.addEventListener('change', function(event) { //rarity siempre va a cambiar en función del valor seleccionado
+//     const container = document.getElementById("pokemonlist"); //constante del contenedor a mostrar
+//     const value = event.target.value 

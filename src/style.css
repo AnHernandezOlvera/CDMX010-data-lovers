@@ -146,6 +146,13 @@ h2{
   transform: rotate(10deg);
 }
 .all-button{
+    font-family: 'Bangers', cursive;
+    font-size: calc(1.2em + 1vw);;
+    padding: .5em 1.5em;
+    color:white;
+    cursor: pointer;
+    border: none;
+    margin-left: 2em;
     background-color: rgb(238, 235, 44);
     transform: rotate(0deg);
     float:right;
@@ -257,7 +264,7 @@ and (max-width: 1080px){
     background-color: #94b989;
     padding: 15px 30px;
     font-size: calc (3em + 4vw); 
-    width: 75%;
+    width: 100%;
     float: right;
   }
   .pokemonlist{
