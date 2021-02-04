@@ -1,4 +1,4 @@
-import {filterByType, changeOrder} from './data.js';
+import {filterByType, changeOrder, numberedList} from './data.js';
 //menu responsive
 const menu = document.getElementById('menuIcon');
 menu.addEventListener('click', function() {
@@ -112,3 +112,41 @@ orderDefine.addEventListener('change', function (event) {
         
     }
 })
+
+const numbered = document.getElementById('numberOrder');
+numbered.addEventListener('change', function(event){
+    const container = document.getElementById("pokemonlist");
+  const order = event.target.value;  
+    if (order === "increase"){
+        const increased = numberedList(1, -1);
+        const numberedPokemons = increased.map(function (pokemon) {
+            return`
+            <div class="card"> 
+            <img src="${pokemon.img}">
+            <p class="name">${pokemon.num} ${pokemon.name}</p>
+            <p class="type">Tipo: ${pokemon.type.join(', ')}</p>
+            <p class="physical">Peso: ${pokemon.size.weight} | Altura: ${pokemon.size.height}</p>
+            <div class="footer-card">
+            <span class="generation">${pokemon.generation.name}</span>
+            </div>
+            </div>
+    `;  
+    }); container.innerHTML=numberedPokemons.join('');
+    }
+    if (order === "decrease"){
+         const decrease = numberedList(-1, 1);
+         const numberedPokemons = decrease.map(function(pokemon){
+             return`
+             <div class="card"> 
+             <img src="${pokemon.img}">
+             <p class="name">${pokemon.num} ${pokemon.name}</p>
+             <p class="type">Tipo: ${pokemon.type.join(', ')}</p>
+             <p class="physical">Peso: ${pokemon.size.weight} | Altura: ${pokemon.size.height}</p>
+             <div class="footer-card">
+             <span class="generation">${pokemon.generation.name}</span>
+             </div>
+             </div>
+     `;
+         }); container.innerHTML = numberedPokemons.join ('');
+    }
+});

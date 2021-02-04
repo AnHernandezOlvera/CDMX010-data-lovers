@@ -42,3 +42,18 @@ export const changeOrder = (x, y) => {
     return 0 
   }); return myorderlist;
 }; console.log(changeOrder(1, -1));
+
+//Función de Ordenado 1-251
+export const numberedList = (x, y) =>{
+  const numberedOrder = pokemons.sort(function (a,b){
+    if (a.num > b.num){
+      let orderDefine = x;
+      return orderDefine;
+    }
+    if (a.num < b.num){
+      let orderDefinetwo = y;
+      return orderDefinetwo;
+    }
+    return 0
+    }); return numberedOrder;
+}; console.log(numberedList(1, -1));
