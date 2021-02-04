@@ -8,31 +8,7 @@ let x = document.getElementById("topnav");
   } else {
     x.className = "startmenu";
   }
-})
-
-const buttonWater = document.getElementById('water-button');
-buttonWater.addEventListener("click",function(){
-    const container = document.getElementById("pokemonlist");
-    const pokemonesAgua = filterByType(buttonWater.value);
-    const waterPokemon = pokemonesAgua.map(function (pokemon) {
-        return`
-        <div class="card"> 
-    <img src="${pokemon.img}">
-  <p class="name">${pokemon.num} ${pokemon.name}</p>
-  <p class="type">Tipo: ${pokemon.type.join(', ')}</p>
-  <p class="physical">Peso: ${pokemon.size.weight} | Altura: ${pokemon.size.height}</p>
-  <div class="footer-card">
-  <span class="generation">${pokemon.generation.name}</span>
-  </div>
-  </div>
-`;  
-}); container.innerHTML=waterPokemon.join('');
-
-
-    console.log(pokemonesAgua);
- 
-})
-
+});
 //Función para mantener la misma imagen después del mouseleave//
 function mouseLeaveAnimation() {
     document.getElementById("back").style.backgroundColor = "#f3fcff";
@@ -46,6 +22,31 @@ botonesFiltrado.forEach(function (boton) {
         console.log(event.target)
         const backgroundImage = event.target.dataset.background
         document.getElementById("image").style.backgroundImage = `url('./images/${backgroundImage}.gif')`;
+    })
+    // refactorización para botones pantalla 1
+    boton.addEventListener('click', (event) =>{
+      const parametroFiltro = event.target.value;
+      const container = document.getElementById("pokemonlist");
+      const pokemonsFiltered = filterByType(parametroFiltro);
+      window.scrollTo({
+        top: container.offsetTop,
+        left: 0,
+        behavior: 'smooth'
+      });
+      const typeSelect = pokemonsFiltered.map(function (pokemon) {
+        return`
+        <div class="card"> 
+        <img src="${pokemon.img}">
+        <p class="name">${pokemon.num} ${pokemon.name}</p>
+        <p class="type">Tipo: ${pokemon.type.join(', ')}</p>
+        <p class="physical">Peso: ${pokemon.size.weight} | Altura: ${pokemon.size.height}</p>
+        <div class="footer-card">
+        <span class="generation">${pokemon.generation.name}</span>
+        </div>
+        </div>
+`;  
+}); container.innerHTML=typeSelect.join('');
+
     })
 })
 //Función para el filtro de tipo en el Selector//
