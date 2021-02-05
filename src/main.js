@@ -1,4 +1,4 @@
-import {filterByType, changeOrder, numberedList, pokemons} from './data.js';
+import {filterByType, changeOrder, numberedList, pokemons, filterByRarity } from './data.js';
 //menu responsive
 const menu = document.getElementById('menuIcon');
 menu.addEventListener('click', function() {
@@ -177,10 +177,24 @@ showAll.addEventListener("click", function(){
 
 }
 );
-
 //Función de selector rareza
-// const rarity = document.getElementById("raritySelector") //Aquí tomamos el id del boton 
+ const rarity = document.getElementById("raritySelector") //Aquí tomamos el id del boton 
 
-// rarity.addEventListener('change', function(event) { //rarity siempre va a cambiar en función del valor seleccionado
-//     const container = document.getElementById("pokemonlist"); //constante del contenedor a mostrar
-//     const value = event.target.value 
+rarity.addEventListener('change', function(event) { //rarity siempre va a cambiar en función del valor seleccionado
+ const container = document.getElementById("pokemonlist"); //constante del contenedor en donde se imprime la data
+ const raritySelected = event.target.value //La rareza seleccionada corresponderá a la tomada por el id
+ const rarityFiltered = filterByRarity(raritySelected); // La lista de pokemones será igual a la función definid como filtrado por rareza con el parametreo que fue seleccionado
+ const pokemonRarity = rarityFiltered.map(function (pokemon) {
+  return`
+  <div class="card"> 
+  <img src="${pokemon.img}">
+  <p class="name">${pokemon.num} ${pokemon.name}</p>
+  <p class="type">Tipo: ${pokemon.type.join(', ')}</p>
+  <p class="physical">Peso: ${pokemon.size.weight} | Altura: ${pokemon.size.height}</p>
+  <div class="footer-card">
+  <span class="generation">${pokemon.generation.name}</span>
+  </div>
+  </div>
+`;  
+}); container.innerHTML=pokemonRarity.join('');
+})

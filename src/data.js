@@ -60,3 +60,12 @@ export const numberedList = (x, y) =>{
     return 0
     }); return numberedOrder;
 }; console.log(numberedList(1, -1));
+
+export const filterByRarity = (pokemonrarity) => {
+  const pokemonsRarity = pokemons.filter(function(pokemon) {
+    return pokemon.pokemon_rarity.includes(pokemonrarity)
+  })
+
+ return pokemonsRarity
+ 
+}; console.log (filterByRarity ("legendary"));
