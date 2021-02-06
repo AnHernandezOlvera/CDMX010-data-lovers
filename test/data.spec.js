@@ -1,18 +1,17 @@
-import { example, anotherExample } from '../src/data.js';
+// eslint-disable-next-line import/extensions
+import { filterByType } from '../src/data.js';
 
-
-describe('example', () => {
+describe('Función de filtrado por tipo', () => {
   it('is a function', () => {
-    expect(typeof example).toBe('function');
+    expect(typeof filterByType).toBe('function');
   });
 
   it('returns `example`', () => {
-    expect(example()).toBe('example');
+    expect(filterByType('water')).toBe('example');
   });
 });
 
-
-describe('anotherExample', () => {
+/* describe('anotherExample', () => {
   it('is a function', () => {
     expect(typeof anotherExample).toBe('function');
   });
@@ -20,4 +19,4 @@ describe('anotherExample', () => {
   it('returns `anotherExample`', () => {
     expect(anotherExample()).toBe('OMG');
   });
-});
+}); */

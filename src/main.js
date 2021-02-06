@@ -1,5 +1,6 @@
 import {
   filterByType, changeOrder, numberedList, pokemons, filterByRarity,
+// eslint-disable-next-line import/extensions
 } from './data.js';
 // menu responsive
 const menu = document.getElementById('menuIcon');
@@ -21,6 +22,7 @@ const botonesFiltrado = document.querySelectorAll('.buttonfilter');
 botonesFiltrado.forEach((boton) => {
   boton.addEventListener('mouseleave', mouseLeaveAnimation);
   boton.addEventListener('mouseover', (event) => {
+    // eslint-disable-next-line no-console
     console.log(event.target);
     const backgroundImage = event.target.dataset.background;
     document.getElementById('image').style.backgroundImage = `url('./images/${backgroundImage}.gif')`;

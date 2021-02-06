@@ -1,10 +1,11 @@
+// eslint-disable-next-line import/extensions
 import data from './data/pokemon/pokemon.js';
 
 export const pokemons = data.pokemon;
 
 // Función de imprimir toda la data
 const container = document.getElementById('pokemonlist');
-console.log(pokemons);
+// console.log(pokemons);
 // eslint-disable-next-line array-callback-return
 export const allPokemons = pokemons.map((pokemon) => {
   const tarjetas = `
@@ -17,7 +18,8 @@ export const allPokemons = pokemons.map((pokemon) => {
   <span class="generation">${pokemon.generation.name}</span>
   </div>
   </div>
-`;console.log(tarjetas);
+`;
+  // console.log(tarjetas);
   container.insertAdjacentHTML('beforeend', tarjetas);
 });
 
@@ -28,6 +30,7 @@ export const filterByType = (type) => { // type = 'poison'
   return pokemonsByType;
 };
 
+// eslint-disable-next-line no-console
 console.log(filterByType('poison'));
 // Función de ordenado alfabeticamente
 export const changeOrder = (x, y) => {
@@ -42,7 +45,8 @@ export const changeOrder = (x, y) => {
     }
     return 0;
   }); return myorderlist;
-}; console.log(changeOrder(1, -1));
+};
+// console.log(changeOrder(1, -1));
 
 // Función de Ordenado 1-251
 export const numberedList = (x, y) => {
@@ -57,11 +61,13 @@ export const numberedList = (x, y) => {
     }
     return 0;
   }); return numberedOrder;
-}; console.log(numberedList(1, -1));
+};
+// console.log(numberedList(1, -1));
 
 export const filterByRarity = (pokemonrarity) => {
   // eslint-disable-next-line max-len
   const pokemonsRarity = pokemons.filter((pokemon) => pokemon.pokemon_rarity.includes(pokemonrarity));
 
   return pokemonsRarity;
-}; console.log(filterByRarity('legendary'));
+};
+// console.log(filterByRarity('legendary'));
