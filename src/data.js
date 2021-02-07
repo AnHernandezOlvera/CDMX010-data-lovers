@@ -4,24 +4,8 @@ import data from './data/pokemon/pokemon.js';
 export const pokemons = data.pokemon;
 
 // Función de imprimir toda la data
-const container = document.getElementById('pokemonlist');
 // console.log(pokemons);
 // eslint-disable-next-line array-callback-return
-export const allPokemons = pokemons.map((pokemon) => {
-  const tarjetas = `
-  <div class="card"> 
-    <img src="${pokemon.img}">
-  <p class="name">${pokemon.num} ${pokemon.name}</p>
-  <p class="type">Tipo: ${pokemon.type.join(', ')}</p>
-  <p class="physical">Peso: ${pokemon.size.weight} | Altura: ${pokemon.size.height}</p>
-  <div class="footer-card">
-  <span class="generation">${pokemon.generation.name}</span>
-  </div>
-  </div>
-`;
-  // console.log(tarjetas);
-  container.insertAdjacentHTML('beforeend', tarjetas);
-});
 
 // Función de filtrado de data por tipo//
 export const filterByType = (type) => { // type = 'poison'
@@ -31,7 +15,7 @@ export const filterByType = (type) => { // type = 'poison'
 };
 
 // eslint-disable-next-line no-console
-console.log(filterByType('poison'));
+// console.log(filterByType('poison'));
 // Función de ordenado alfabeticamente
 export const changeOrder = (x, y) => {
   const myorderlist = pokemons.sort((a, b) => {
