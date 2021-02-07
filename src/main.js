@@ -12,6 +12,21 @@ menu.addEventListener('click', () => {
     x.className = 'startmenu';
   }
 });
+// Función para mostrar la data al cargar página
+window.onload = function print() {
+  const container = document.getElementById('pokemonlist');
+  const allPokemons = pokemons.map((pokemon) => `
+    <div class="card"> 
+    <img src="${pokemon.img}">
+    <p class="name">${pokemon.num} ${pokemon.name}</p>
+    <p class="type">Tipo: ${pokemon.type.join(', ')}</p>
+    <p class="physical">Peso: ${pokemon.size.weight} | Altura: ${pokemon.size.height}</p>
+    <div class="footer-card">
+    <span class="generation">${pokemon.generation.name}</span>
+    </div>
+    </div>
+`); container.innerHTML = allPokemons.join('');
+};
 // Función para mantener la misma imagen después del mouseleave
 function mouseLeaveAnimation() {
   document.getElementById('back').style.backgroundColor = '#f3fcff';
