@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/extensions
-import { filterByRarity, pokemons } from '../src/data.js';
+import { filterByRarity, pokemons, filterByType } from '../src/data.js';
 
 describe('Función de filtrado por tipo', () => {
   it('is a function', () => {
@@ -20,6 +20,15 @@ describe('Regresa toda la data de pokemones', () => {
     expect(pokemons).toHaveLength(251);
   });
 });
+
+describe('Esta funcion devuelve tipo de pokemon poison', () =>{
+  it ('must return 37 objects', ()=> {
+    expect (filterByType('poison')).toHaveLength(37);
+  });
+});
+
+//describe ('Esta función ordena los pokemones en orden alfabético', )
+
 
 /* describe('anotherExample', () => {
   it('is a function', () => {
